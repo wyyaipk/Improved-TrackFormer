@@ -27,15 +27,6 @@ In order to evaluate TrackFormer on a multi-object tracking dataset, we provide 
 python src/track.py with reid
 ```
 
-<center>
-
-| MOT17     | MOTA         | IDF1           |       MT     |     ML     |     FP       |     FN              |  ID SW.      |
-|  :---:    | :---:        |     :---:      |    :---:     | :---:      |    :---:     |   :---:             |  :---:       |
-| **Train** |     74.2     |     71.7       |     849      | 177        |      7431    |      78057          |  1449        |
-| **Test**  |     74.1     |     68.0       |    1113      | 246        |     34602    |     108777          |  2829        |
-
-</center>
-
 #### Public detections (DPM, FRCNN, SDP)
 
 ```
@@ -44,15 +35,6 @@ python src/track.py with \
     tracker_cfg.public_detections=min_iou_0_5 \
     obj_detect_checkpoint_file=models/mot17_deformable_multi_frame/checkpoint_epoch_50.pth
 ```
-
-<center>
-
-| MOT17     | MOTA         | IDF1           |       MT     |     ML     |     FP       |     FN              |  ID SW.      |
-|  :---:    | :---:        |     :---:      |    :---:     | :---:      |    :---:     |   :---:             |  :---:       |
-| **Train** |     64.6     |     63.7       |    621       | 675        |     4827     |     111958          |  2556        |
-| **Test**  |     62.3     |     57.6       |    688       | 638        |     16591    |     192123          |  4018        |
-
-</center>
 
 ### MOT20
 
@@ -64,34 +46,6 @@ python src/track.py with \
     dataset_name=MOT20-ALL \
     obj_detect_checkpoint_file=models/mot20_crowdhuman_deformable_multi_frame/checkpoint_epoch_50.pth
 ```
-
-<center>
-
-| MOT20     | MOTA         | IDF1           |       MT     |     ML     |     FP       |     FN              |  ID SW.      |
-|  :---:    | :---:        |     :---:      |    :---:     | :---:      |    :---:     |   :---:             |  :---:       |
-| **Train** |     81.0     |     73.3       |    1540      | 124        |     20807    |     192665          |  1961        |
-| **Test**  |     68.6     |     65.7       |     666      | 181        |     20348    |     140373          |  1532        |
-
-</center>
-
-### MOTS20
-
-```
-python src/track.py with \
-    dataset_name=MOTS20-ALL \
-    obj_detect_checkpoint_file=models/mots20_train_masks/checkpoint.pth
-```
-
-Our tracking script only applies MOT17 metrics evaluation but outputs MOTS20 mask prediction files. To evaluate these download the official [MOTChallengeEvalKit](https://github.com/dendorferpatrick/MOTChallengeEvalKit).
-
-<center>
-
-| MOTS20    | sMOTSA         | IDF1           |       FP     |     FN     |     IDs      |
-|  :---:    | :---:          |     :---:      |    :---:     | :---:      |    :---:     |
-| **Train** |     --         |     --         |    --        |   --       |     --       |
-| **Test**  |     54.9       |     63.6       |    2233      | 7195       |     278      |
-
-</center>
 
 ### Demo
 
