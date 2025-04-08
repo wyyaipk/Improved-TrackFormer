@@ -1,0 +1,27 @@
+ninja_required_version = 1.3
+cxx = cl
+nvcc = F:\cuda\CUDA10.2\CUDA1\bin\nvcc
+
+cflags = /nologo /Ox /W3 /GL /DNDEBUG /MD /MD /wd4819 /EHsc -DWITH_CUDA -IF:\pycharm_professional\trackformer_1\src\trackformer\models\ops\src -IF:\anaconda\Anaconda3\envs\trackformer\lib\site-packages\torch\include -IF:\anaconda\Anaconda3\envs\trackformer\lib\site-packages\torch\include\torch\csrc\api\include -IF:\anaconda\Anaconda3\envs\trackformer\lib\site-packages\torch\include\TH -IF:\anaconda\Anaconda3\envs\trackformer\lib\site-packages\torch\include\THC -IF:\cuda\CUDA10.2\CUDA1\include -IF:\anaconda\Anaconda3\envs\trackformer\include -IF:\anaconda\Anaconda3\envs\trackformer\include "-IF:\VS\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include" "-IF:\VS\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\ATLMFC\include" "-IF:\VS\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" "-IF:\Windows Kits\10\include\10.0.22000.0\ucrt" "-IF:\Windows Kits\10\\include\10.0.22000.0\\um" "-IF:\Windows Kits\10\\include\10.0.22000.0\\shared" "-IF:\Windows Kits\10\\include\10.0.22000.0\\winrt" "-IF:\Windows Kits\10\\include\10.0.22000.0\\cppwinrt"
+post_cflags = -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=MultiScaleDeformableAttention -D_GLIBCXX_USE_CXX11_ABI=0 /std:c++14
+cuda_cflags = -Xcompiler /MD -Xcompiler /wd4819 -Xcompiler /EHsc -DWITH_CUDA -IF:\pycharm_professional\trackformer_1\src\trackformer\models\ops\src -IF:\anaconda\Anaconda3\envs\trackformer\lib\site-packages\torch\include -IF:\anaconda\Anaconda3\envs\trackformer\lib\site-packages\torch\include\torch\csrc\api\include -IF:\anaconda\Anaconda3\envs\trackformer\lib\site-packages\torch\include\TH -IF:\anaconda\Anaconda3\envs\trackformer\lib\site-packages\torch\include\THC -IF:\cuda\CUDA10.2\CUDA1\include -IF:\anaconda\Anaconda3\envs\trackformer\include -IF:\anaconda\Anaconda3\envs\trackformer\include "-IF:\VS\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include" "-IF:\VS\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\ATLMFC\include" "-IF:\VS\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" "-IF:\Windows Kits\10\include\10.0.22000.0\ucrt" "-IF:\Windows Kits\10\\include\10.0.22000.0\\um" "-IF:\Windows Kits\10\\include\10.0.22000.0\\shared" "-IF:\Windows Kits\10\\include\10.0.22000.0\\winrt" "-IF:\Windows Kits\10\\include\10.0.22000.0\\cppwinrt"
+cuda_post_cflags = -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -DCUDA_HAS_FP16=1 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=MultiScaleDeformableAttention -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_61,code=sm_61
+ldflags = 
+
+rule compile
+  command = cl /showIncludes $cflags -c $in /Fo$out $post_cflags
+  deps = msvc
+
+rule cuda_compile
+  command = $nvcc $cuda_cflags -c $in -o $out $cuda_post_cflags
+
+
+
+build F$:\pycharm_professional\trackformer_1\src\trackformer\models\ops\temp.win-amd64-3.7\Release\pycharm_professional\trackformer_1\src\trackformer\models\ops\src\vision.obj: compile F$:\pycharm_professional\trackformer_1\src\trackformer\models\ops\src\vision.cpp
+build F$:\pycharm_professional\trackformer_1\src\trackformer\models\ops\temp.win-amd64-3.7\Release\pycharm_professional\trackformer_1\src\trackformer\models\ops\src\cpu\ms_deform_attn_cpu.obj: compile F$:\pycharm_professional\trackformer_1\src\trackformer\models\ops\src\cpu\ms_deform_attn_cpu.cpp
+build F$:\pycharm_professional\trackformer_1\src\trackformer\models\ops\temp.win-amd64-3.7\Release\pycharm_professional\trackformer_1\src\trackformer\models\ops\src\cuda\ms_deform_attn_cuda.obj: cuda_compile F$:\pycharm_professional\trackformer_1\src\trackformer\models\ops\src\cuda\ms_deform_attn_cuda.cu
+
+
+
+
+

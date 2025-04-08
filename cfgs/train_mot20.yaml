@@ -1,0 +1,12 @@
+dataset: mot
+
+train_split: mot20_train_coco
+val_split: mot20_train_cross_val_frame_0_5_to_1_0_coco
+
+mot_path_train: /home/spl/PK/DataSet/MOT20
+mot_path_val: /home/spl/PK/DataSet/MOT20
+
+resume: /home/spl/PK/Code/trackformer_spl_v1/models/r50_deformable_detr_plus_iterative_bbox_refinement-checkpoint_hidden_dim_288.pth
+
+epochs: 50
+lr_drop: 10

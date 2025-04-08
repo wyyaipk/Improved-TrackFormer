@@ -1,0 +1,8 @@
+python src/train.py with \
+    mot20_crowdhuman \
+    deformable \
+    multi_frame \
+    tracking \
+    output_dir=models/mot20_crowdhuman_deformable_multi_frame \
+    resume=models/mot20_crowdhuman_deformable_multi_frame/checkpoint.pth \
+    resume_optim=True \

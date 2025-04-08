@@ -1,0 +1,5 @@
+python src/track.py with \
+    reid \
+    tracker_cfg.public_detections=min_iou_0_5 \
+    obj_detect_checkpoint_file=models/mot17_deformable_multi_frame/checkpoint_epoch_45.pth \
+    output_dir=models/mot17_deformable_multi_frame/result_45_public \

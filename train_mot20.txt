@@ -1,0 +1,6 @@
+python src/train.py with \
+    mot20 \
+    deformable \
+    multi_frame \
+    tracking \
+    output_dir=models/mot17_deformable_multi_frame_mot20 \

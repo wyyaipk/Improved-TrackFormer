@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+F:/pycharm_professional/trackformer_1/src/trackformer/models/ops/src/vision.cpp
+F:/pycharm_professional/trackformer_1/src/trackformer/models/ops/src/cpu/ms_deform_attn_cpu.cpp
+F:/pycharm_professional/trackformer_1/src/trackformer/models/ops/src/cuda/ms_deform_attn_cuda.cu
+MultiScaleDeformableAttention.egg-info/PKG-INFO
+MultiScaleDeformableAttention.egg-info/SOURCES.txt
+MultiScaleDeformableAttention.egg-info/dependency_links.txt
+MultiScaleDeformableAttention.egg-info/top_level.txt

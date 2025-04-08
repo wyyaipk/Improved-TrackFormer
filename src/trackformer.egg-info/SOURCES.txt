@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+src/trackformer/__init__.py
+src/trackformer/engine.py
+src/trackformer/vis.py
+src/trackformer.egg-info/PKG-INFO
+src/trackformer.egg-info/SOURCES.txt
+src/trackformer.egg-info/dependency_links.txt
+src/trackformer.egg-info/top_level.txt
