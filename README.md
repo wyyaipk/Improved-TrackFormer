@@ -9,15 +9,15 @@ The recently proposed TrackFormer has established a fully end-to-end framework w
 
 ## Installation
 
-We refer to our [docs/INSTALL.md](docs/INSTALL.md) for detailed installation instructions.
+Please refer to our [docs/INSTALL.md](docs/INSTALL.md) for detailed installation instructions.
 
 ## Train TrackFormer
 
-We refer to our [docs/TRAIN.md](docs/TRAIN.md) for detailed training instructions.
+Please refer to our [docs/TRAIN.md](docs/TRAIN.md) for detailed training instructions.
 
-## Evaluate TrackFormer
+## Evaluate TrackFormer++
 
-In order to evaluate TrackFormer on a multi-object tracking dataset, we provide the `src/track.py` script which supports several datasets and splits interchangle via the `dataset_name` argument (See `src/datasets/tracking/factory.py` for an overview of all datasets.) The default tracking configuration is specified in `cfgs/track.yaml`. To facilitate the reproducibility of our results, we provide evaluation metrics for both the train and test set.
+In order to evaluate TrackFormer++ on a multi-object tracking dataset, we provide the `src/track.py` script which supports several datasets and splits interchangle via the `dataset_name` argument (See `src/datasets/tracking/factory.py` for an overview of all datasets.) The default tracking configuration is specified in `cfgs/track.yaml`. To facilitate the reproducibility of our results, we provide evaluation metrics for both the train and test set.
 
 ### MOT17
 
