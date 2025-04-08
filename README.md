@@ -1,23 +1,7 @@
-# TrackFormer with Prior Position Embedding and
- Reference Point Updating for Multi-Object Tracking
-
-This repository provides the official implementation of the [TrackFormer: Multi-Object Tracking with Transformers](https://arxiv.org/abs/2101.02702) paper by [Tim Meinhardt](https://dvl.in.tum.de/team/meinhardt/), [Alexander Kirillov](https://alexander-kirillov.github.io/), [Laura Leal-Taixe](https://dvl.in.tum.de/team/lealtaixe/) and [Christoph Feichtenhofer](https://feichtenhofer.github.io/). The codebase builds upon [DETR](https://github.com/facebookresearch/detr), [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) and [Tracktor](https://github.com/phil-bergmann/tracking_wo_bnw).
-
-<!-- **As the paper is still under submission this repository will continuously be updated and might at times not reflect the current state of the [arXiv paper](https://arxiv.org/abs/2012.01866).** -->
-
-<div align="center">
-    <img src="docs/MOT17-03-SDP.gif" alt="MOT17-03-SDP" width="375"/>
-    <img src="docs/MOTS20-07.gif" alt="MOTS20-07" width="375"/>
-</div>
-
+# TrackFormer with Prior Position Embedding and Reference Point Updating for Multi-Object Tracking
 ## Abstract
 
-The challenging task of multi-object tracking (MOT) requires simultaneous reasoning about track initialization, identity, and spatiotemporal trajectories.
-We formulate this task as a frame-to-frame set prediction problem and introduce TrackFormer, an end-to-end MOT approach based on an encoder-decoder Transformer architecture.
-Our model achieves data association between frames via attention by evolving a set of track predictions through a video sequence.
-The Transformer decoder initializes new tracks from static object queries and autoregressively follows existing tracks in space and time with the new concept of identity preserving track queries.
-Both decoder query types benefit from self- and encoder-decoder attention on global frame-level features, thereby omitting any additional graph optimization and matching or modeling of motion and appearance.
-TrackFormer represents a new tracking-by-attention paradigm and yields state-of-the-art performance on the task of multi-object tracking (MOT17) and segmentation (MOTS20).
+The recently proposed TrackFormer has established a fully end-to-end framework with the concepts of object query and track query for multi-object tracking (MOT). TrackFormer,which is based on the deformable attention mechanism, heavily depends on the keypoint sampling, where a set of keypoints is sampled around the so-called reference point for the subtasks of object detection and data association in MOT. However, the keypoint sampling is still not effective due to the absence of prior position information and the inaccuracy of the reference point, which leads to degraded tracking performance. In this paper, we propose TrackFormer++ to address this issue of the ineffective keypoint sampling through the strategies of prior position embedding and reference point updating. In the proposed TrackFormer++, the reference point for object detection is utilized as the prior position and explicitly embedded into the object query. Similarly, the reference point for data association is adaptively updated according to a predicted offset relative to the object center in the previous frame. Extensive experiments by the public and private detection on the MOT17 and MOT20 datasets demonstrate that TrackFormer++ achieves superior or comparable performance to the state-of-the-art baselines.
 
 <div align="center">
     <img src="docs/method.png" alt="TrackFormer casts multi-object tracking as a set prediction problem performing joint detection and tracking-by-attention. The architecture consists of a CNN for image feature extraction, a Transformer encoder for image feature encoding and a Transformer decoder which applies self- and encoder-decoder attention to produce output embeddings with bounding box and class information."/>
