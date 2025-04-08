@@ -1,4 +1,4 @@
-# Train TrackFormer
+# Train TrackFormer++
 
 We provide the code as well as intermediate models of our entire training pipeline for multiple datasets. Monitoring of the training/evaluation progress is possible via command line as well as [Visdom](https://github.com/fossasia/visdom.git). For the latter, a Visdom server must be running at `vis_port` and `vis_server` (see `cfgs/train.yaml`). We set `vis_server=''` by default to deactivate Visdom logging. To deactivate Visdom logging with set parameters, you can run a training with the `no_vis=True` flag.
 
