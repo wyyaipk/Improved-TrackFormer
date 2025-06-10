@@ -13,7 +13,7 @@ The recently proposed TrackFormer has established a fully end-to-end framework w
 
 Please refer to our [docs/INSTALL.md](docs/INSTALL.md) for detailed installation instructions.
 
-## Train TrackFormer
+## Train TrackFormer++
 
 Please refer to our [docs/TRAIN.md](docs/TRAIN.md) for detailed training instructions.
 
