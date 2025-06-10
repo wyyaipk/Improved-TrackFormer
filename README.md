@@ -53,7 +53,7 @@ python src/track.py with \
 
 ### Demo
 
-To facilitate the application of TrackFormer, we provide a demo interface which allows for a quick processing of a given video sequence.
+To facilitate the application of TrackFormer++, we provide a demo interface which allows for a quick processing of a given video sequence.
 
 ```
 ffmpeg -i data/snakeboard/snakeboard.mp4 -vf fps=30 data/snakeboard/%06d.png
