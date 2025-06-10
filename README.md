@@ -19,7 +19,9 @@ Please refer to our [docs/TRAIN.md](docs/TRAIN.md) for detailed training instruc
 
 ## Evaluate TrackFormer++
 
+<div align="justify">
 In order to evaluate TrackFormer++ on a multi-object tracking dataset, we provide the `src/track.py` script which supports several datasets and splits interchangle via the `dataset_name` argument (See `src/datasets/tracking/factory.py` for an overview of all datasets.) The default tracking configuration is specified in `cfgs/track.yaml`. To facilitate the reproducibility of our results, we provide evaluation metrics for both the train and test set.
+</div>
 
 ### MOT17
 
