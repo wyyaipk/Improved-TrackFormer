@@ -1,7 +1,9 @@
 # TrackFormer with Prior Position Embedding and Reference Point Updating for Multi-Object Tracking
 ## Abstract
 
+<div align="justify">
 The recently proposed TrackFormer has established a fully end-to-end framework with the concepts of object query and track query for multi-object tracking (MOT). TrackFormer,which is based on the deformable attention mechanism, heavily depends on the keypoint sampling, where a set of keypoints is sampled around the so-called reference point for the subtasks of object detection and data association in MOT. However, the keypoint sampling is still not effective due to the absence of prior position information and the inaccuracy of the reference point, which leads to degraded tracking performance. In this paper, we propose TrackFormer++ to address this issue of the ineffective keypoint sampling through the strategies of prior position embedding and reference point updating. In the proposed TrackFormer++, the reference point for object detection is utilized as the prior position and explicitly embedded into the object query. Similarly, the reference point for data association is adaptively updated according to a predicted offset relative to the object center in the previous frame. Extensive experiments by the public and private detection on the MOT17 and MOT20 datasets demonstrate that TrackFormer++ achieves superior or comparable performance to the state-of-the-art baselines.
+</div>
 
 <div align="center">
     <img src="docs/Frame.png" alt="TrackFormer casts multi-object tracking as a set prediction problem performing joint detection and tracking-by-attention. The architecture consists of a CNN for image feature extraction, a Transformer encoder for image feature encoding and a Transformer decoder which applies self- and encoder-decoder attention to produce output embeddings with bounding box and class information."/>
