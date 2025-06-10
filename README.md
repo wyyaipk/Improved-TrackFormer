@@ -1,4 +1,4 @@
-# <div align="center"> TrackFormer with Prior Position Embedding and Reference Point Updating for Multi-Object Tracking </div>
+# TrackFormer with Prior Position Embedding and Reference Point Updating for Multi-Object Tracking
 ## Abstract
 
 <div align="justify">
